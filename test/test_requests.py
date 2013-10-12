@@ -15,12 +15,9 @@ from postmaster.http import *
 
 HTTPBIN = os.environ.get('HTTPBIN_URL', 'http://httpbin.org/')
 
-class UrlLib2TestCase(unittest.TestCase):
+class RequestsTestCase(unittest.TestCase):
     def setUp(self):
-        super(UrlLib2TestCase, self).setUp()
-        postmaster.http.HTTP_LIB = 'urllib2'
-        import urllib2
-        postmaster.http.urllib2 = urllib2
+        super(RequestsTestCase, self).setUp()
         postmaster.config.base_url = HTTPBIN
 
     def testEmptyPost(self):

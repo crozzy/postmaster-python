@@ -6,9 +6,7 @@ import unittest
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 
-from test_urllib2 import *
-from test_urlfetch import *
-from test_pycurl import *
+from test_requests import *
 from test_pm import *
 
 

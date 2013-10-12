@@ -6,9 +6,11 @@ from postmaster.version import VERSION
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
 
+json = 'json'
+if sys.version_info < (2 , 6):
+    json = 'simplejson'
 
-requires = [
-]
+requires = ['requests', json]
 
 setup(name='postmaster',
       version=VERSION,
