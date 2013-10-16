@@ -1,4 +1,5 @@
 import os
+import sys
 
 from setuptools import setup, find_packages
 from postmaster.version import VERSION
@@ -6,11 +7,9 @@ from postmaster.version import VERSION
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
 
-json = 'json'
+requires = ['requests']
 if sys.version_info < (2 , 6):
-    json = 'simplejson'
-
-requires = ['requests', json]
+    requires.append('simplejson')
 
 setup(name='postmaster',
       version=VERSION,
